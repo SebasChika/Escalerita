@@ -1,0 +1,463 @@
+* {
+    cursor: url('../imagenes/cursores/arrow.cur'), default;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    user-select: none;
+    overflow: hidden;
+    background-image: url('../imagenes/fondo.png');
+    background-size: cover;
+    background-position: center;
+}
+
+#center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px;
+}
+
+#contenedor {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    height: 90%;
+    width: 60%;
+    border-radius: 15px;
+    transform: translateX(150px);
+    opacity: 0.6;
+}
+
+.apareciendo {
+    animation: aparecerContenedor 3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes aparecerContenedor {
+    from {
+        transform: translateX(150px);
+        opacity: 0.6;
+
+    }
+
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+}
+
+.aparecerDado {
+    animation: aparecerContenedor2 5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes aparecerContenedor2 {
+    from {
+        transform: translateY(50px);
+        opacity: 0.6;
+
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+}
+
+.aparecerDado2 {
+    animation: aparecerContenedor3 5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes aparecerContenedor3 {
+    from {
+        transform: translateY(-50px);
+        opacity: 0.6;
+
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+}
+
+
+.cubo {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: rgb(168, 187, 187);
+    font-family: fuente;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.301);
+    color: rgba(44, 40, 40, 0.425);
+    margin: 0;
+    padding: 5px;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#foca {
+    position: absolute;
+    height: 80%;
+    width: 90%;
+    bottom: 0;
+}
+
+#cubo91 {
+    filter: brightness(1.2);
+}
+
+#dado {
+    position: relative;
+    height: 60%;
+    width: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateY(20px);
+    background-image: url('../imagenes/ponerDados.png');
+}
+
+#left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 30%;
+}
+
+#instruction {
+    position: absolute;
+    bottom: 0;
+    left: 1%;
+    font-family: fuente;
+    color: #2d28229a;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-family: fuente;
+    text-align: center;
+    color: #2d2822;
+}
+
+#movidas {
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+}
+
+.aparecerCanti {
+    animation: 2s aparecerCantidad cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes aparecerCantidad {
+    from {
+        transform: scale(1.1) translateY(5px);
+        opacity: 0.8;
+        letter-spacing: 2px;
+    }
+
+    to {
+        transform: scale(1) translateY(0px);
+        opacity: 1;
+        letter-spacing: 0px;
+    }
+
+}
+
+#dadito {
+    position: absolute;
+    transform: translateX(-50%);
+    width: 50%;
+    left: 50%;
+    top: 10%;
+    filter: drop-shadow(0 2px 15px black);
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: url('../imagenes/cursores/hand.cur'), pointer;
+}
+
+.oscurecer {
+    animation: 1s irrr cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.focaInvertida {
+    transform: scaleX(-1);
+}
+
+@keyframes irrr {
+    from {
+        filter: brightness(1);
+        transform: scale(1) translateX(-50%);
+        top: 10%;
+    }
+
+    to {
+        filter: brightness(0.5);
+        transform: scale(0.8) translateX(-60%) skew(5deg);
+        top: 13%;
+    }
+
+}
+
+.volver {
+    animation: 1s ir cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes ir {
+    from {
+        filter: brightness(0.5);
+        transform: scale(0.8) translateX(-60%);
+        top: 13%;
+    }
+
+    to {
+        filter: brightness(1);
+        transform: scale(1) translateX(-50%);
+        top: 10%;
+    }
+
+}
+
+@font-face {
+    font-family: fuente;
+    src: url('../fuentes/fuente.ttf');
+}
+
+#preguntaPantalla {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    flex-direction: column;
+    transform: translateX(-50%);
+    top: 8%;
+    height: 80%;
+    width: 60%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../imagenes/tablero.png');
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+}
+
+#preguntaPantalla label {
+    color: rgb(250, 250, 242);
+    font-family: tiza;
+}
+
+#preguntaPantalla button {
+    font-family: tiza;
+    background-color: #2d3529;
+    border: none;
+    padding: 10px 20px;
+    width: 40%;
+    color: rgb(250, 250, 242);
+    font-size: 2em;
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    margin-top: 20px;
+}
+
+#preguntaPantalla button:hover {
+    transform: scale(1.05) translateY(3px);
+}
+
+#preguntaPantalla input {
+    font-family: tiza;
+    background-color: #121610;
+    border: none;
+    padding: 10px 30px;
+    width: 80%;
+    color: rgb(250, 250, 242);
+}
+
+input::selection {
+    background-color: #b4b4b462;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#negro {
+    position: absolute;
+    z-index: 999;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    pointer-events: none;
+}
+
+#pantallaGanadora {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    pointer-events: none;
+    opacity: 0;
+}
+
+#pantallaGanadora img {
+    width: 90%;
+    height: 80%;
+}
+
+.spawn {
+    animation: 10s aparecerGanar cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes aparecerGanar {
+    from {
+        opacity: 0;
+
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+#botonEmpezar {
+    position: absolute;
+    bottom: 0%;
+    width: 20% !important;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#botonEmpezar:hover {
+    transform: scale(1.05) translateY(-3px);
+    filter: drop-shadow(0 10px 0px #514c47);
+    cursor: url('../imagenes/cursores/hand.cur'), pointer;
+}
+
+#pantallaInicio {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    z-index: 998;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #a3a19e;
+    background-image: url('../imagenes/fondo.png');
+    transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#logo {
+    transform: translateY(-20px);
+    width: 60%;
+}
+
+.fadeIn {
+    animation: fadeIn 2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+
+}
+
+.volverMedia {
+    animation: median 2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes median {
+    from {
+        opacity: 0.6;
+    }
+
+    to {
+        opacity: 0;
+    }
+
+}
+
+
+.media {
+    animation: mediana 2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes mediana {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.6;
+    }
+
+}
+
+.questionSalir {
+    animation: salirPregunta 2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes salirPregunta {
+    from {
+        opacity: 1;
+        top: 8%;
+        pointer-events: all;
+    }
+
+    to {
+        opacity: 0;
+        top: -4%;
+        pointer-events: none;
+    }
+
+}
+
+.question {
+    animation: aparecerPregunta 2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+#pregunta {
+    color: rgb(250, 250, 242);
+    font-family: tiza;
+    font-size: 4em;
+}
+
+@keyframes aparecerPregunta {
+    from {
+        opacity: 0;
+        top: -4%;
+        pointer-events: none;
+    }
+
+    to {
+        opacity: 1;
+        top: 8%;
+        pointer-events: all;
+    }
+
+}
+
+@font-face {
+    font-family: tiza;
+    src: url('../fuentes/Chalk\ School.otf');
+}

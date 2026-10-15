@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="imagenes/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escalera & Serpiente |</title>
+</head>
+
+<body>
+    <audio id="winner" src="sonidos/ganador.mp3"></audio>
+    <audio id="incorrecto" src="sonidos/incorrect.mp3"></audio>
+    <audio id="esoo" src="sonidos/good.mp3"></audio>
+    <audio loop id="theme" src="sonidos/Friday Theme.mp3"></audio>
+    <audio id="girar" src="sonidos/girar.mp3"></audio>
+    <audio id="este" src="sonidos/correcto.mp3"></audio>
+    <audio id="mover" src="sonidos/pop.mp3"></audio>
+    <main>
+        <div id="pantallaGanadora">
+            <img src="imagenes/ganaste.jpg">
+        </div>
+        <div id="negro"></div>
+        <div id="preguntaPantalla">
+            <h1 id="pregunta"></h1>
+            <label for="respuesta">respuesta:</label>
+            <input id="answe" placeholder="respuesta . . ." type="text">
+            <button type="button" id="enviarRespu">Enviar</button>
+            
+        </div>
+        <p id="instruction">puedes moverte con espacio y tus movimientos</p>
+        <div id="pantallaInicio"><img id="logo" src="imagenes/titulo.png">
+        <img id="botonEmpezar" src="imagenes/boton Jugar.png"></div>
+        <div id="center">
+            <div id="left">
+                <h1 id="cantidad">CANTIDAD DE MOVIMIENTOS: </h1>
+                <div id="dado">
+                    <img id="dadito" src="imagenes/dados/dados0.png">
+                </div>
+            </div>
+            <div id="contenedor">
+
+            </div>
+        </div>
+    </main>
+    <script src="js/java.js"></script>
+</body>
+
+</html>
